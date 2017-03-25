@@ -1,0 +1,37 @@
+{
+  "name": "twtr",
+  "version": "0.0.1",
+  "description": "Twtr Twitter client",
+  "repository": "hugmanrique/twtr",
+  "author": {
+    "name": "Hugo Manrique",
+    "email": "npm@hugmanrique.me",
+    "url": "https://hugmanrique.me"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "npm run build:macos && npm run build:linux && npm.run build:win",
+    "build:macos": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --platform=darwin --arch=x64 --icon=static/Icon.icns Twtr.app",
+    "build:win": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --platform=win32 --arch=ia32 --icon=static/Icon.ico",
+    "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --platform=linux --arch=x64"
+  },
+  "dependencies": {
+    "electron-config": "^0.2.1",
+    "electron-context-menu": "^0.8.0",
+    "electron-debug": "^1.1.0",
+    "electron-dl": "^1.7.0",
+    "element-ready": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^1.6.2",
+    "electron-packager": "^8.6.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
