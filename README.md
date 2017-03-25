@@ -5,9 +5,7 @@ This app is based in the [Mobile Twitter](https://mobile.twitter.com/) site, but
 I created this app to learn more about [Electron](https://electron.atom.io/) and how it works.
 
 <div align="center">
-	<a href="https://github.com/sindresorhus/anatine/releases/latest" align="center">
-		<img alt="App image" src="http://i.imgur.com/iOaLeGu.png" width="617">
-	</a>
+	<img alt="App image" src="http://i.imgur.com/iOaLeGu.png" width="617">
 </div>
 
 ## Background behavior
