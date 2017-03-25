@@ -48,7 +48,7 @@ function createMainWindow() {
     darkTheme: darkMode,
     backgroundColor: darkMode ? '#192633' : '#fff',
     webPreferences: {
-      preload: utils.getPath('browser.js'),
+      preload: utils.getPath('assets/browser.js'),
       nodeIntegration: false,
       plugins: true
     }
