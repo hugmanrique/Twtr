@@ -47,6 +47,9 @@ Type=Application
 Icon=/full/path/to/folder/Twtr/resources/app/icons/Icon.png
 ```
 
+## CSS Edits
+The CSS modifications were made by [sindresorhus](https://github.com/sindresorhus). You can check his Chrome extension [here](https://chrome.google.com/webstore/detail/refined-twitter/nlfgmdembofgodcemomfeimamihoknip).
+
 ## Contributing
 Pull requests and issues are more than welcome, but remember this was an Electron starter project.
 
