@@ -11,9 +11,9 @@
   "scripts": {
     "start": "electron .",
     "build": "npm run build:macos && npm run build:linux && npm.run build:win",
-    "build:macos": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --platform=darwin --arch=x64 --icon=static/Icon.icns Twtr.app",
-    "build:win": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --platform=win32 --arch=ia32 --icon=static/Icon.ico",
-    "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --platform=linux --arch=x64"
+    "build:macos": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --platform=darwin --arch=x64 --icon=icons/Icon.icns Twtr.app",
+    "build:win": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --platform=win32 --arch=ia32 --icon=icons/Icon.ico",
+    "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --platform=linux --arch=x64 --icon=icons/Icon.ico"
   },
   "dependencies": {
     "electron-config": "^0.2.1",
