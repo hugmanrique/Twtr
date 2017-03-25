@@ -2,6 +2,7 @@
   "name": "twtr",
   "version": "0.0.1",
   "description": "Twtr Twitter client",
+  "license": "MIT",
   "repository": "hugmanrique/twtr",
   "author": {
     "name": "Hugo Manrique",
