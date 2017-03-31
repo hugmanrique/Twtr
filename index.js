@@ -47,6 +47,7 @@ function createMainWindow() {
     minHeight: 260,
     titleBarStyle: 'hidden-inset',
     autoHideMenuBar: true,
+    frame: false,
     darkTheme: darkMode,
     backgroundColor: darkMode ? '#192633' : '#fff',
     webPreferences: {

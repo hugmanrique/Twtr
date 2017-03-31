@@ -1,6 +1,11 @@
 'use strict';
-const electron = require('electron');
-const elementReady = require('element-ready');
+//const electron = require('electron');
 const config = require('../config');
 
-// TODO Add custom code and keybinds
+function setDarkMode() {
+  document.documentElement.classList.toggle('dark-mode', config.get('darkMode'));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setDarkMode();
+});
