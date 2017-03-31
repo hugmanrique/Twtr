@@ -18,7 +18,7 @@ The app isn't available as a compiled package yet, so you will need to do it by 
 
 First of all, you need to clone this repo:
 ```bash
-$ git clone git@github.com:hugmanrique/Twtr.git
+$ git clone https://github.com/hugmanrique/Twtr.git
 ```
 
 Then, install all the dependencies with `$ npm install`
