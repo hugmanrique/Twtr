@@ -85,10 +85,26 @@ function createMainWindow() {
   return win;
 }
 
+let appIcon = null;
+
 app.on('ready', () => {
   //electron.Menu.setApplicationMenu()
   window = createMainWindow();
-  
+
+  if (process.platform !== 'darwin') {
+    const iconName = process.platform === 'win32' ? 'icons/Icon.ico' : 'icons/Icon.png';
+    const iconPath = path.join(__dirname, iconName);
+    appIcon = new electron.Tray(iconPath);
+    const contextMenu = electron.Menu.buildFromTemplate([{
+      label: 'Exit',
+      click: function () {
+        app.quit();
+      }
+    }]);
+    appIcon.setToolTip('Twtr');
+    appIcon.setContextMenu(contextMenu);
+  }
+
   const page = window.webContents;
 
   page.on('dom-ready', () => {
@@ -113,5 +129,11 @@ app.on('before-quit', () => {
 
   if (!window.isFullScreen()) {
     config.set('lastWindowState', window.getBounds());
+  }
+});
+
+app.on('window-all-closed', function () {
+  if (appIcon) {
+    appIcon.destroy();
   }
 });
