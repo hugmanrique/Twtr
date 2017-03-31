@@ -288,3 +288,12 @@ body.sessions-new-page .footer {
 main > div._3xzA16lK /* profile page */ section > div > div > div > div > div /* timeline container */ > div:nth-child(4) /* who to follow */{
 	display: none;
 }
+
+/* Disable scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+._3QPrjhX2 {
+    border: none !important;
+}

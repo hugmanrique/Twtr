@@ -18,7 +18,7 @@ The app isn't available as a compiled package yet, so you will need to do it by 
 
 First of all, you need to clone this repo:
 ```bash
-$ git clone git@github.com:hugmanrique/Twtr.git
+$ git clone https://github.com/hugmanrique/Twtr.git
 ```
 
 Then, install all the dependencies with `$ npm install`
@@ -27,7 +27,7 @@ Then, install all the dependencies with `$ npm install`
 Run `$ npm run build:macos` and move `dist/Twtr.app` to the `/Applications` directory.
 
 ### Windows
-<img src="http://i.imgur.com/yTF31bu.png" width="200" alt="Windows look">
+<img src="https://i.imgur.com/YFnozEf.png" width="200" alt="Windows look">
 
 Run `$ npm run build:win`. Your compiled exe file will be in the `dist` directory.
 

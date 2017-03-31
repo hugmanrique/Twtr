@@ -10,6 +10,8 @@ const utils = require('./lib/utils');
 const app = electron.app;
 
 let window;
+let appIcon;
+
 let isQuitting = false;
 
 const isAlreadyRunning = app.makeSingleInstance(() => {
@@ -39,11 +41,11 @@ function createMainWindow() {
     y: lastState.y,
     width: lastState.width,
     height: lastState.height,
-    icon: process.platform === 'linux' && getPath('icons/Icon.png'),
+    icon: utils.getIconPath(),
     minWidth: 340,
     maxWidth: maxWidth,
     minHeight: 260,
-    titleBarStyle: 'hidden-inset',
+    titleBarStyle: 'hidden',
     autoHideMenuBar: true,
     darkTheme: darkMode,
     backgroundColor: darkMode ? '#192633' : '#fff',
@@ -85,25 +87,34 @@ function createMainWindow() {
   return win;
 }
 
-let appIcon = null;
+function createTray() {
+  if (process.platform === 'darwin') {
+    return;
+  }
+
+  const iconPath = utils.getIconPath();
+  const appIcon = new electron.Tray(iconPath);
+
+  const menu = electron.Menu.buildFromTemplate([{
+    label: 'Exit',
+    click: app.quit
+  }]);
+
+  appIcon.on('click', () => {
+    if (window) {
+      window.restore();
+    }
+  });
+
+  appIcon.setToolTip('Twtr');
+  appIcon.setContextMenu(menu);
+
+  return appIcon;
+}
 
 app.on('ready', () => {
-  //electron.Menu.setApplicationMenu()
   window = createMainWindow();
-
-  if (process.platform !== 'darwin') {
-    const iconName = process.platform === 'win32' ? 'icons/Icon.ico' : 'icons/Icon.png';
-    const iconPath = path.join(__dirname, iconName);
-    appIcon = new electron.Tray(iconPath);
-    const contextMenu = electron.Menu.buildFromTemplate([{
-      label: 'Exit',
-      click: function () {
-        app.quit();
-      }
-    }]);
-    appIcon.setToolTip('Twtr');
-    appIcon.setContextMenu(contextMenu);
-  }
+  appIcon = createTray();
 
   const page = window.webContents;
 

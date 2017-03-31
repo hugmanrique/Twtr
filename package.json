@@ -1,6 +1,7 @@
 {
   "name": "twtr",
-  "version": "0.0.1",
+  "productName": "Twtr",
+  "version": "0.0.2",
   "description": "Twtr Twitter client",
   "license": "MIT",
   "repository": "hugmanrique/twtr",
