@@ -10,6 +10,8 @@ const utils = require('./lib/utils');
 const app = electron.app;
 
 let window;
+let appIcon;
+
 let isQuitting = false;
 
 const isAlreadyRunning = app.makeSingleInstance(() => {
@@ -85,25 +87,28 @@ function createMainWindow() {
   return win;
 }
 
-let appIcon = null;
+function createTray() {
+  if (process.platform === 'darwin') {
+    return;
+  }
+
+  const iconPath = utils.getIconPath();
+  const appIcon = new electron.Tray(iconPath);
+
+  const menu = electron.Menu.buildFromTemplate([{
+    label: 'Exit',
+    click: app.quit
+  }]);
+
+  appIcon.setToolTip('Twtr');
+  appIcon.setContextMenu(menu);
+
+  return appIcon;
+}
 
 app.on('ready', () => {
-  //electron.Menu.setApplicationMenu()
   window = createMainWindow();
-
-  if (process.platform !== 'darwin') {
-    const iconName = process.platform === 'win32' ? 'icons/Icon.ico' : 'icons/Icon.png';
-    const iconPath = path.join(__dirname, iconName);
-    appIcon = new electron.Tray(iconPath);
-    const contextMenu = electron.Menu.buildFromTemplate([{
-      label: 'Exit',
-      click: function () {
-        app.quit();
-      }
-    }]);
-    appIcon.setToolTip('Twtr');
-    appIcon.setContextMenu(contextMenu);
-  }
+  appIcon = createTray();
 
   const page = window.webContents;
 
