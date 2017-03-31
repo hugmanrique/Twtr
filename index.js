@@ -102,7 +102,7 @@ function createTray() {
 
   appIcon.on('click', () => {
     if (window) {
-      window.restore();
+      window.show();
     }
   });
 
