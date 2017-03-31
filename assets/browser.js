@@ -8,6 +8,6 @@ function setDarkMode() {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.add(`os-${process.platform}`);
-  
+
   setDarkMode();
 });
