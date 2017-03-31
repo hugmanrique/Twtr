@@ -41,7 +41,7 @@ function createMainWindow() {
     y: lastState.y,
     width: lastState.width,
     height: lastState.height,
-    icon: process.platform === 'linux' && utils.getPath('icons/Icon.png'),
+    icon: utils.getIconPath(),
     minWidth: 340,
     maxWidth: maxWidth,
     minHeight: 260,
@@ -99,6 +99,12 @@ function createTray() {
     label: 'Exit',
     click: app.quit
   }]);
+
+  appIcon.on('click', () => {
+    if (window) {
+      window.restore();
+    }
+  });
 
   appIcon.setToolTip('Twtr');
   appIcon.setContextMenu(menu);
