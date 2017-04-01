@@ -157,6 +157,7 @@ html.dark-mode ._1HXcreMa {
 html.dark-mode ._2OhV6WSs ._1eF_MiFx ._2sSKjr8W,
 html.dark-mode ._3ITjOJ53,
 html.dark-mode #react-root header nav,
+html.dark-mode ._1s7qNPIc,
 html.dark-mode ._2sUBu-oA,
 html.dark-mode ._24u5-vsm {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -180,6 +181,11 @@ html.dark-mode ._1YVNMg8K ._29kyA7wX,
 html.dark-mode ._24u5-vsm {
 	background-color: rgba(0, 0, 0, 0.3) !important;
 }
+
 html.dark-mode ._1aYYbHbU._3f2NsD-H {
 	margin-left: 40px !important;
+}
+
+.Fe7ul3Lt {
+	font-weight: 600 !important;
 }
