@@ -102,6 +102,10 @@ function createTray() {
 
   appIcon.on('click', () => {
     if (window) {
+      if (window.isMinimized()) {
+        window.restore();
+      }
+
       window.show();
     }
   });
