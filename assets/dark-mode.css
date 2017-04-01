@@ -7,6 +7,7 @@ html.dark-mode body.sessions-new-page,
 html.dark-mode nav,
 html.dark-mode nav > div,
 html.dark-mode ._1yjej2X8,
+html.dark-mode ._1uDBaJEQ,
 html.dark-mode ._3ECzUXHz,
 html.dark-mode ._3o5W64B2,
 html.dark-mode ._146dsPAe,
@@ -49,10 +50,11 @@ html.dark-mode .c2-JCY2V ._222QxFjc ._1BmZ-Yeo {
 html.dark-mode,
 html.dark-mode nav,
 html.dark-mode ._12jQTkIJ,
+html.dark-mode .Fe7ul3Lt,
 html.dark-mode ._3qXEQLXF,
 html.dark-mode ._3EzK97M9 > span,
 html.dark-mode ._3O8j-ZpD {
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(255, 255, 255, 0.75) !important;
 }
 
 html.dark-mode .E3BRg3uP,
